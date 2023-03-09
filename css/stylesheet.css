@@ -164,6 +164,47 @@ nav ul li a:hover {
     background-color: rgb(161, 205, 255);
 }*/
 
+#MainFormCompra {
+    padding: 2%;
+    min-height: 290vh;
+    display: grid;
+    grid-template-areas:
+        "DatosUsuarioC DatosUsuarioC AsideC AsideC"
+        "MedioPagoC MedioPagoC MedioPagoC MedioPagoC"
+        "MuestrasC MuestrasC MuestrasC MuestrasC";
+    /*grid-template-columns: 100vw;*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*25% 25% 25% 25%;*/
+    grid-template-rows: 1fr 1fr 0.5fr;
+    background-color: cornflowerblue;
+}
+
+.DatosUsuarioC {
+    padding: 5%;
+    grid-area: DatosUsuarioC;
+    background-color: cornflowerblue;
+}
+
+.AsideC {
+    padding: 5%;
+    grid-area: AsideC;
+    background-color: rgb(161, 205, 255);
+    border-radius: 20px;
+}
+
+.MedioPagoC {
+    padding: 5%;
+    grid-area: MedioPagoC;
+    background-color: cornflowerblue;
+}
+
+.MuestrasC {
+    padding: 5%;
+    grid-area: MuestrasC;
+    box-shadow: 0px 0px 7px 7px rgb(242, 250, 133);
+    border-radius: 20px;
+}
+
 /* HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS */
 /* HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS */
 /* HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS HEADERS */
@@ -219,6 +260,7 @@ nav ul li a:hover {
     position: sticky;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    height: 30px;
 }
 
 .NavSup ul {
@@ -230,6 +272,12 @@ nav ul li a:hover {
     font-style: italic;
     font-weight: bold;
     margin: 5px;
+}
+
+.NavSup ul li a:hover {
+    font-size: 105%;
+    transition: 0.5s;
+    transition-timing-function: ease;
 }
 
 /* BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS BANNERS */
@@ -302,6 +350,17 @@ nav ul li a:hover {
     border-radius: 20px;
 }
 
+.BannerFormCompra {
+    grid-area: Banner;
+    margin-top: 15px;
+    width: 100%;
+    background-image: url(../Images/bannercontacto.jpg);
+    height: 190px;
+    background-size: contain;
+    background-position: center;
+    border-radius: 20px;
+}
+
 #BannerMuestras {
     width: 100%;
     height: 190px;
@@ -310,6 +369,7 @@ nav ul li a:hover {
     border-radius: 20px;
     animation: BannerMuestras 13s infinite;
 }
+
 
 .TituloPrincipal {
     font-family: 'Ultra', serif;
@@ -540,6 +600,30 @@ nav ul li a:hover {
     border-radius: 20px;
 }
 
+.MuestrasC {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(161, 205, 255);
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+.MuestrasC img {
+    position: sticky;
+    filter: grayscale(80%);
+}
+
+.MuestrasC img:hover {
+    transition: 0.5s;
+    transition-timing-function: ease;
+    filter: grayscale(0%);
+   
+}
+
 .Muestra div {
     display: flex;
     justify-content: space-around;
@@ -590,10 +674,22 @@ nav ul li a:hover {
     justify-content: space-around;
 }
 
+#Sponsors a {
+    height: 67px;
+    width: 187px;
+}
+
 #Sponsors a img {
     width: 180px;
     height: 60px;
     border-radius: 10px;
+}
+
+#Sponsors img:hover {
+    transition: 0.5s;
+    transition-timing-function: ease;
+    height: 65px;
+    width: 185px;
 }
 
 #Ubicacion {
@@ -637,9 +733,23 @@ nav ul li a:hover {
     align-items: center;*/
 }
 
+#GaleriaImagenes a {
+    height: 167px;
+    width: 277px;
+}
+
 #GaleriaImagenes img {
+    height: 160px;
+    width: 270px;
     margin: 5px;
     border-radius: 20px;
+}
+
+#GaleriaImagenes img:hover {
+    transition: 0.5s;
+    transition-timing-function: ease;
+    height: 165px;
+    width: 275px;
 }
 
 #Producto {
@@ -670,7 +780,7 @@ nav ul li a:hover {
     width: 45px;
 }
 
-#NuestrasRedes div a{
+#NuestrasRedes div a {
     height: 100px;
     width: 50px;
 }
@@ -710,6 +820,7 @@ nav ul li a:hover {
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    height: 30px;
 }
 
 #NavInf ul {
@@ -720,6 +831,12 @@ nav ul li a:hover {
     font-style: italic;
     font-weight: bold;
     margin: 5px;
+}
+
+#NavInf ul li a:hover {
+    font-size: 105%;
+    transition: 0.5s;
+    transition-timing-function: ease;
 }
 
 #Trademark {
@@ -739,6 +856,13 @@ nav ul li a:hover {
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 0px;
+    height: 30px;
+}
+
+#NavRedes ul li a:hover {
+    font-size: 105%;
+    transition: 0.5s;
+    transition-timing-function: ease;
 }
 
 /* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
@@ -747,106 +871,122 @@ nav ul li a:hover {
 /* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
 /* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
 
-@media (min-width: 730px) {
-    #TituloGral {
-        font-size: 35px;
+@media (max-width: 426px) {
+    #MainFormCompra {
+        min-height: 290vh;
+        display: grid;
+        grid-template-areas:
+            "AsideC"
+            "DatosUsuarioC"
+            "MedioPagoC"
+            "MuestrasC";
+        /*grid-template-columns: 100vw;*/
+        grid-template-columns: 1fr;
+        /*25% 25% 25% 25%;*/
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        background-color: rgb(161, 205, 255);
     }
 
-    .TituloPrincipal {
-        font-size: 35px;
+    @media (min-width: 730px) {
+        #TituloGral {
+            font-size: 35px;
+        }
+
+        .TituloPrincipal {
+            font-size: 35px;
+        }
+
+        #LeyendaBannerHome {
+            width: 720px;
+            height: 150px;
+        }
+
+        #LeyendaBannerNosotros {
+            width: 720px;
+            height: 150px;
+        }
+
+        #LeyendaBannerTestimonios {
+            width: 720px;
+            height: 150px;
+        }
+
+        #LeyendaBannerTienda {
+            width: 720px;
+            height: 150px;
+        }
+
+        #BannerMuestras {
+            display: none;
+        }
     }
 
-    #LeyendaBannerHome {
-        width: 720px;
-        height: 150px;
+    @media (max-width: 729px) {
+
+        #SeccionMuestras {
+            display: none;
+        }
+
     }
 
-    #LeyendaBannerNosotros {
-        width: 720px;
-        height: 150px;
+    @media (min-width: 900px) {
+        .SeccionSupContacto textarea {
+            width: 800px;
+        }
     }
 
-    #LeyendaBannerTestimonios {
-        width: 720px;
-        height: 150px;
+    @media (min-width: 1096px) {
+        #TituloGral {
+            font-size: 35px;
+        }
+
+        .TituloPrincipal {
+            font-size: 42px;
+        }
+
+        #LeyendaBannerHome {
+            width: 720px;
+            height: 150px;
+        }
     }
 
-    #LeyendaBannerTienda {
-        width: 720px;
-        height: 150px;
+    @keyframes BannerMuestras {
+
+        0%,
+        1.4% {
+            opacity: 0.1;
+        }
+
+        1.5%,
+        30% {
+            background-image: url(../Images/EJE1.jpg);
+            opacity: 1;
+        }
+
+        31%,
+        34% {
+            opacity: 0.1;
+        }
+
+        35%,
+        65% {
+            background-image: url(../Images/EJE2.jpg);
+            opacity: 1;
+        }
+
+        66%,
+        69% {
+            opacity: 0.1;
+        }
+
+        70%,
+        98.5% {
+            background-image: url(../Images/EJE3.jpg);
+            opacity: 1;
+        }
+
+        98.6%,
+        100% {
+            opacity: 0.1;
+        }
     }
-
-    #BannerMuestras {
-        display: none;
-    }
-}
-
-@media (max-width: 729px) {
-
-    #SeccionMuestras {
-        display: none;
-    }
-
-}
-
-@media (min-width: 900px) {
-    .SeccionSupContacto textarea {
-        width: 800px;
-    }
-}
-
-@media (min-width: 1096px) {
-    #TituloGral {
-        font-size: 35px;
-    }
-
-    .TituloPrincipal {
-        font-size: 42px;
-    }
-
-    #LeyendaBannerHome {
-        width: 720px;
-        height: 150px;
-    }
-}
-
-@keyframes BannerMuestras {
-
-    0%,
-    1.4% {
-        opacity: 0.1;
-    }
-
-    1.5%,
-    30% {
-        background-image: url(../Images/EJE1.jpg);
-        opacity: 1;
-    }
-
-    31%,
-    34% {
-        opacity: 0.1;
-    }
-
-    35%,
-    65% {
-        background-image: url(../Images/EJE2.jpg);
-        opacity: 1;
-    }
-
-    66%,
-    69% {
-        opacity: 0.1;
-    }
-
-    70%,
-    98.5% {
-        background-image: url(../Images/EJE3.jpg);
-        opacity: 1;
-    }
-
-    98.6%,
-    100% {
-        opacity: 0.1;
-    }
-}

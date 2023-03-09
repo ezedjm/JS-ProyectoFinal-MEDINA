@@ -12,15 +12,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
     <link rel="icon" href="../Images/juanifavicon1.jpeg">
-    <title>Finaliza tu compra</title>
+    <title>Finaliza tu compra!</title>
 </head>
 
-<body id="BodyCompra">
+<body>
 
     <header class="Header">
         <div id="Marca">
             <h1 id="NombreSitio"><a href="../index.html">Juanit</a></h1>
-            <a href="../index.html"><div id="FotoJuanitoMarca"><img src="../Images/juanifavicon1bis.png" alt="FOTO DE JUANITO"></div></a>
+            <a href="../index.html">
+                <div id="FotoJuanitoMarca"><img src="../Images/juanifavicon1bis.png" alt="FOTO DE JUANITO"></div>
+            </a>
         </div>
         <div>
             <nav class="NavSup">
@@ -35,63 +37,18 @@
         </div>
     </header>
 
-    <main>
-        <div class="py-5 text-center">
-            <h2>Realiza tu Checkout</h2>
-        </div>
-        <div class="row g-5">
-            <div class="col-md-5 col-lg-4 order-md-last">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-primary">Tu carrito</span>
-                    <span class="badge bg-primary rounded-pill">3</span>
-                </h4>
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                        <div>
-                            <h6 class="my-0">Producto 1</h6>
-                            <small class="text-muted">Descripcion</small>
-                        </div>
-                        <span class="text-muted">Valor</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                        <div>
-                            <h6 class="my-0">Producto 2</h6>
-                            <small class="text-muted">Descripcion</small>
-                        </div>
-                        <span class="text-muted">Valor</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                        <div>
-                            <h6 class="my-0">Producto 3</h6>
-                            <small class="text-muted">Descripcion</small>
-                        </div>
-                        <span class="text-muted">Valor</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between bg-light">
-                        <div class="text-success">
-                            <h6 class="my-0">Promo code</h6>
-                            <small>CODIGO DE DESCUENTO</small>
-                        </div>
-                        <span class="text-success">Valor</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (Ars)</span>
-                        <strong>ValorTotal</strong>
-                    </li>
-                </ul>
+    <section class="BannerFormCompra">
+        <h1 class="TituloPrincipal">Realiza tu Checkout!</h1>
+    </section>
 
-                <form class="card p-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Promo code">
-                        <button type="submit" class="btn btn-danger">Canjear</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-7 col-lg-8">
+    <main id="MainFormCompra">
+
+        <section class="DatosUsuarioC">
+            <div>
                 <h4 class="mb-3">Domicilio de facturacion</h4>
                 <form class="needs-validation" novalidate>
                     <div class="row g-3">
-                        <div class="col-sm-6">
+                        <div>
                             <label for="firstName" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                             <div class="invalid-feedback">
@@ -99,7 +56,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="w-100">
                             <label for="lastName" class="form-label">Apellido</label>
                             <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                             <div class="invalid-feedback">
@@ -108,7 +65,7 @@
                         </div>
 
 
-                        <div class="col-12">
+                        <div >
                             <label for="email" class="form-label">Email <span
                                     class="text-muted">(Opcional)</span></label>
                             <input type="email" class="form-control" id="email" placeholder="you@example.com">
@@ -117,7 +74,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div>
                             <label for="address" class="form-label">Domicilio</label>
                             <input type="text" class="form-control" id="address" placeholder="Plaza street" required>
                             <div class="invalid-feedback">
@@ -125,13 +82,13 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div>
                             <label for="address2" class="form-label">Domicilio 2<span
                                     class="text-muted">(Opcional)</span></label>
                             <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                         </div>
 
-                        <div class="col-md-5">
+                        <div>
                             <label for="country" class="form-label">Pais</label>
                             <select class="form-select" id="country" required>
                                 <option value="">Elegir...</option>
@@ -142,7 +99,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div>
                             <label for="state" class="form-label">Provincia</label>
                             <select class="form-select" id="state" required>
                                 <option value="">Elegir...</option>
@@ -153,9 +110,9 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+                        <div>
                             <label for="zip" class="form-label">Codigo Postal</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                            <input type="text" class="form-control" id="CodigoPostal" placeholder="" required>
                             <div class="invalid-feedback">
                                 Se requiere ingresar un Codigo Postal.
                             </div>
@@ -175,74 +132,138 @@
                         <label class="form-check-label" for="save-info">Guardar informacion para mi proxima
                             compra.</label>
                     </div>
+        </section>
 
-                    <hr class="my-4">
-
-                    <h4 class="mb-3">Metodo de Pago</h4>
-
-                    <div class="my-3">
-                        <div class="form-check">
-                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked
-                                required>
-                            <label class="form-check-label" for="credit">Tarjeta de Credito</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="debit">Tarjeta de Debito</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="paypal">Mercado Pago</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="paypal">Transferencia/Deposito Bancario</label>
-                        </div>
-                    </div>
-
-                    <div class="row gy-3">
-                        <div class="col-md-6">
-                            <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                            <small class="text-muted">Nombre Completo tal cual se ve en la tarjeta</small>
-                            <div class="invalid-feedback">
-                                Se requiere el nombre del titular de la tarjeta.
+        <section class="AsideC">
+            <div>
+                <div>
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-primary">Tu carrito</span>
+                        <span class="badge bg-primary rounded-pill">3</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Producto 1</h6>
+                                <small class="text-muted">Descripcion</small>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="cc-number" class="form-label">Numero de tarjeta de Credito</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Se requiere el numero de la tarjeta de Credito.
+                            <span class="text-muted">Valor</span>
+                        </li>
+                        <li class="d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Producto 2</h6>
+                                <small class="text-muted">Descripcion</small>
                             </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="cc-expiration" class="form-label">Vencimiento</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Se requiere ingresar fecha de vencimiento de la tarjeta.
+                            <span class="text-muted">Valor</span>
+                        </li>
+                        <li class="d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Producto 3</h6>
+                                <small class="text-muted">Descripcion</small>
                             </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="cc-cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                            <div class="invalid-feedback">
-                                Se requiere ingresar el codigo de seguridad.
+                            <span class="text-muted">Valor</span>
+                        </li>
+                        <hr>
+                        <li class="d-flex justify-content-between bg-light form-control">
+                            <div class="text-success">
+                                <h6 class="my-0">Promo code</h6>
+                                <small>CODIGO DE DESCUENTO</small>
                             </div>
+                            <span class="text-success">Valor</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Total (Ars)</span>
+                            <strong>Valor Total</strong>
+                        </li>
+                        <hr>
+                    </ul>
+
+                    <form class="card p-2">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Promo code">
+                            <button type="submit" class="w-100 btn btn-danger">Canjear</button>
                         </div>
-                    </div>
+                    </form>
+                </div>
+        </section>
 
-                    <hr class="my-4">
+        <section class="MedioPagoC">
+            <hr>
+            <h4 class="mb-3">Metodo de Pago</h4>
 
-                    <button class="w-100 btn btn-danger btn-lg" type="submit">FINALIZAR COMPRA</button>
-                </form>
+            <div class="my-3">
+                <div class="form-check">
+                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                    <label class="form-check-label" for="credit">Tarjeta de Credito</label>
+                </div>
+                <div class="form-check">
+                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                    <label class="form-check-label" for="debit">Tarjeta de Debito</label>
+                </div>
+                <div class="form-check">
+                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                    <label class="form-check-label" for="paypal">Mercado Pago</label>
+                </div>
+                <div class="form-check">
+                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                    <label class="form-check-label" for="paypal">Transferencia/Deposito Bancario</label>
+                </div>
             </div>
-        </div>
+
+            <div class="row gy-3">
+                <div>
+                    <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                    <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                    <small class="text-muted">Nombre Completo tal cual se ve en la tarjeta</small>
+                    <div class="invalid-feedback">
+                        Se requiere el nombre del titular de la tarjeta.
+                    </div>
+                </div>
+
+                <div>
+                    <label for="cc-number" class="form-label">Numero de tarjeta de Credito</label>
+                    <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere el numero de la tarjeta de Credito.
+                    </div>
+                </div>
+
+                <div>
+                    <label for="cc-expiration" class="form-label">Vencimiento</label>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere ingresar fecha de vencimiento de la tarjeta.
+                    </div>
+                </div>
+
+                <div>
+                    <label for="cc-cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere ingresar el codigo de seguridad.
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-danger btn-lg" type="submit">FINALIZAR COMPRA</button>
+        </section>
 
 
+        <section class="MuestrasC">
+                <div>
+                    <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
+                </div>
+    
+                <div>
+                    <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
+                </div>
+    
+                <div>
+                    <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
+                </div>
+        </section>
 
     </main>
 
