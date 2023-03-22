@@ -1,0 +1,273 @@
+/* COSAS GENERALES DEL SITIO */
+
+@import "./componentes/variables";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-body;
+    min-width: 390px;
+}
+
+main section {
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+        color: $color-fuente-Juanito;
+    }
+
+}
+
+#Btn {
+    background-color: $color-boton-base;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 8px;
+
+    &:hover {
+        transition: 0.5s;
+        transition-timing-function: ease;
+        font-size: 110%;
+        background-color: $color-boton-hover;
+        color: $color-fuente-boton-hover;
+    }
+}
+
+nav {
+    ul {
+        li {
+            a {
+                &:hover {
+                    color: $color-nav-hover;
+                    text-shadow: $sombra-nav-hover;
+                }
+            }
+        }
+    }
+}
+
+#TituloGral {
+    text-align: center;
+    font-family: 'Ultra', serif;
+    font-weight: lighter;
+    font-size: 30px;
+    color: $color-fuente-Juanito;
+    margin: 20px;
+    text-shadow: #FC0 1px 0 10px;
+    /*text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    color: rgb(250, 234, 169);*/
+}
+
+#LinksBanner {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2px;
+}
+
+* textarea {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    resize: none;
+    border-radius: 5px;
+}
+
+#MainFormCompra {
+    padding: 2%;
+    min-height: 290vh;
+    display: grid;
+    grid-template-areas:
+        "DatosUsuarioC DatosUsuarioC AsideC AsideC"
+        "MedioPagoC MedioPagoC MedioPagoC MedioPagoC"
+        "MuestrasC MuestrasC MuestrasC MuestrasC";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    background-color: cornflowerblue;
+}
+
+.DatosUsuarioC {
+    padding: 5%;
+    grid-area: DatosUsuarioC;
+    background-color: cornflowerblue;
+}
+
+.AsideC {
+    padding: 5%;
+    grid-area: AsideC;
+    background-color: rgb(161, 205, 255);
+    border-radius: 20px;
+}
+
+.MedioPagoC {
+    padding: 5%;
+    grid-area: MedioPagoC;
+    background-color: cornflowerblue;
+}
+
+.MuestrasC {
+    padding: 5%;
+    grid-area: MuestrasC;
+    box-shadow: 0px 0px 7px 7px rgb(242, 250, 133);
+    border-radius: 20px;
+}
+
+/* HEADERS */
+
+@import "./componentes/headers";
+
+/* NavSup */
+
+@import "./componentes/navSup";
+
+/* BANNERS */
+
+@import "./componentes/banners";
+
+/* SECCIONES SUpERIORES */
+
+@import "./componentes/seccionSup";
+
+/* SECCIONES INFERIORES */
+
+@import "./componentes/seccionInf";
+
+/* FOOTERS */
+
+@import "./componentes/footers";
+
+/* MEDIA QUERIES */
+
+@media (max-width: 426px) {
+    #MainFormCompra {
+        min-height: 290vh;
+        display: grid;
+        grid-template-areas:
+            "AsideC"
+            "DatosUsuarioC"
+            "MedioPagoC"
+            "MuestrasC";
+        /*grid-template-columns: 100vw;*/
+        grid-template-columns: 1fr;
+        /*25% 25% 25% 25%;*/
+        grid-template-rows: 0.5fr 1fr 1fr 1fr;
+        background-color: rgb(161, 205, 255);
+    }
+
+    @media (min-width: 730px) {
+        #TituloGral {
+            font-size: 35px;
+        }
+
+        .TituloPrincipal {
+            font-size: 35px;
+        }
+
+        #LeyendaBannerHome {
+            width: 720px;
+            height: 150px;
+        }
+
+        #LeyendaBannerNosotros {
+            width: 720px;
+            height: 150px;
+        }
+
+        #LeyendaBannerTestimonios {
+            width: 720px;
+            height: 150px;
+        }
+
+        #LeyendaBannerTienda {
+            width: 720px;
+            height: 150px;
+        }
+
+        #BannerMuestras {
+            display: none;
+        }
+
+    }
+
+    @media (max-width: 729px) {
+
+        #SeccionMuestras {
+            display: none;
+        }
+
+    }
+
+    @media (min-width: 900px) {
+        .SeccionSupContacto textarea {
+            width: 800px;
+        }
+    }
+
+    @media (min-width: 1096px) {
+        #TituloGral {
+            font-size: 35px;
+        }
+
+        .TituloPrincipal {
+            font-size: 42px;
+        }
+
+        #LeyendaBannerHome {
+            width: 720px;
+            height: 150px;
+        }
+    }
+
+    @keyframes BannerMuestras {
+
+        0%,
+        1.4% {
+            opacity: 0.1;
+        }
+
+        1.5%,
+        30% {
+            background-image: url(../Images/EJE1.jpg);
+            opacity: 1;
+        }
+
+        31%,
+        34% {
+            opacity: 0.1;
+        }
+
+        35%,
+        65% {
+            background-image: url(../Images/EJE2.jpg);
+            opacity: 1;
+        }
+
+        66%,
+        69% {
+            opacity: 0.1;
+        }
+
+        70%,
+        98.5% {
+            background-image: url(../Images/EJE3.jpg);
+            opacity: 1;
+        }
+
+        98.6%,
+        100% {
+            opacity: 0.1;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+.Header {
+    grid-area: Header;
+    background-color: rgb(5, 57, 153);
+    display: flex;
+    top: 0%;
+    position: sticky;
+    flex-direction: column;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    div {
+        width: 100%;
+        display: flex;
+        align-items: first baseline;
+        flex-direction: row;
+        justify-content: center;
+
+        img {
+            width: 45px;
+        }
+    }
+}
+
+.Header #NombreSitio {
+    font-family: 'Ultra', serif;
+    font-size: 80px;
+    color: $color-fuente-Juanito;
+    font-weight: lighter;
+}
+
+#Marca {
+    display: flex;
+    align-items: baseline;
+}

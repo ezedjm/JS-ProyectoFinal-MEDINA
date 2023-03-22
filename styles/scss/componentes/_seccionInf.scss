@@ -1,0 +1,237 @@
+
+.SeccionInf {
+    font-family: 'Ultra', serif;
+    color: rgb(5, 57, 153);
+    font-weight: lighter;
+    text-shadow: #FC0 1px 0 10px;
+    margin-top: 20px;
+    grid-area: SeccionInf;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+    h1 {
+        align-items: center;
+        justify-self: center;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+}
+
+
+#SeccionMuestras {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.Muestra {
+    background-color: rgb(161, 205, 255);
+    text-align: center;
+    height: 299px;
+    width: 300px;
+    margin: 25px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+
+    div {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+
+.MuestrasC {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(161, 205, 255);
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+
+    img {
+        position: sticky;
+        filter: grayscale(80%);
+
+        &:hover {
+            transition: 0.5s;
+            transition-timing-function: ease;
+            filter: grayscale(0%);
+        }
+    }
+}
+
+.LinksMobile {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: rgb(161, 205, 255);
+    text-align: center;
+    width: 380px;
+    height: 250px;
+    margin: 25px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+
+    div {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+
+#LeyendaLinksMobile {
+    margin: 10px;
+    padding: 5px;
+}
+
+.TarjetaMobile {
+    background-color: rgb(161, 205, 255);
+    text-align: center;
+    width: 399px;
+    height: 200px;
+    margin: 25px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+#Sponsors {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    a {
+        height: 67px;
+        width: 187px;
+
+        img {
+            width: 180px;
+            height: 60px;
+            border-radius: 10px;
+
+            &:hover {
+                transition: 0.5s;
+                transition-timing-function: ease;
+                height: 65px;
+                width: 185px;
+            }
+        }
+    }
+}
+
+#Ubicacion {
+    text-align: left;
+    font-family: 'Ultra', serif;
+    margin-bottom: 30px;
+    font-size: 19px;
+    color: $color-fuente-Juanito;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        img {
+            margin: 39px;
+            border-radius: 20px;
+        }
+
+        iframe {
+            border-radius: 20px;
+        }
+    }
+}
+
+#GaleriaImagenes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    a {
+        height: 167px;
+        width: 277px;
+    }
+
+    img {
+        height: 160px;
+        width: 270px;
+        margin: 5px;
+        border-radius: 20px;
+
+        &:hover {
+            transition: 0.5s;
+            transition-timing-function: ease;
+            height: 165px;
+            width: 275px;
+        }
+    }
+}
+
+
+#Producto {
+    display: flex;
+    align-items: center;
+    background-color: rgb(161, 205, 255);
+    text-align: center;
+    width: 399px;
+    height: 300px;
+    margin: 25px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+#NuestrasRedes {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+
+    img {
+        margin-top: 20px;
+        height: 45px;
+        width: 45px;
+
+        &:hover {
+            transition: 0.5s;
+            transition-timing-function: ease;
+            height: 48px;
+            width: 48px;
+        }
+    }
+
+    div {
+        a {
+            height: 100px;
+            width: 50px;
+        }
+    }
+}
+
+
+#BoxBtnEnviar {
+    width: 75px;
+    height: 30px;
+}

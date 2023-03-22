@@ -1,0 +1,30 @@
+.NavSup {
+    grid-area: NavSup;
+    background-color: rgb(5, 57, 153);
+    width: 100%;
+    position: sticky;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 30px;
+
+    ul {
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style-type: none;
+        font-style: italic;
+        font-weight: bold;
+        margin: 5px;
+
+        li {
+            a {
+                &:hover {
+                    font-size: 105%;
+                    transition: 0.5s;
+                    transition-timing-function: ease;
+                }
+            }
+        }
+    }
+}
