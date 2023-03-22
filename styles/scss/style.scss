@@ -44,6 +44,14 @@ a {
     }
 }
 
+#BtnStores {
+    @extend #Btn;
+
+    &:hover {
+        font-size: 100%;
+    }
+}
+
 nav {
     ul {
         li {
@@ -64,9 +72,7 @@ nav {
     font-size: 30px;
     color: $color-fuente-Juanito;
     margin: 20px;
-    text-shadow: #FC0 1px 0 10px;
-    /*text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-    color: rgb(250, 234, 169);*/
+    text-shadow: $sombra-titulos;
 }
 
 #LinksBanner {
@@ -95,13 +101,13 @@ nav {
         "MuestrasC MuestrasC MuestrasC MuestrasC";
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 0.5fr;
-    background-color: cornflowerblue;
+    background-color: $color-body;
 }
 
 .DatosUsuarioC {
     padding: 5%;
     grid-area: DatosUsuarioC;
-    background-color: cornflowerblue;
+    background-color: $color-body;
 }
 
 .AsideC {
@@ -114,13 +120,13 @@ nav {
 .MedioPagoC {
     padding: 5%;
     grid-area: MedioPagoC;
-    background-color: cornflowerblue;
+    background-color: $color-body;
 }
 
 .MuestrasC {
     padding: 5%;
     grid-area: MuestrasC;
-    box-shadow: 0px 0px 7px 7px rgb(242, 250, 133);
+    box-shadow: $sombra-muestras-c;
     border-radius: 20px;
 }
 
