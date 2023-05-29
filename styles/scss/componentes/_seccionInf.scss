@@ -192,16 +192,25 @@
 
 #Producto {
     display: flex;
-    align-items: center;
+    align-items: center ;
+    justify-content: space-around;
+    flex-direction: column;
     background-color: rgb(161, 205, 255);
     text-align: center;
     width: 399px;
-    height: 300px;
+    height: 399px;
     margin: 25px;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
 }
+
+#ProductosPagina {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    }
 
 #NuestrasRedes {
     margin-top: 20px;

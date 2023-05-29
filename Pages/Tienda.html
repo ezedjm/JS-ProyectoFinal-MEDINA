@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creamos la protesis que tu mascota necesita! Sillas de ruedas, apoyos miembros delanteros y traseros y mucho mas!">
-    <meta name="keywords" content="ortopedia, mascotas, perro, perros, gato, gatos, silla de ruedas, sillas de ruedas para mascotas, protesis mascotas, protesis perro, protesis gato, pet shop">
+    <meta name="description"
+        content="Creamos la protesis que tu mascota necesita! Sillas de ruedas, apoyos miembros delanteros y traseros y mucho mas!">
+    <meta name="keywords"
+        content="ortopedia, mascotas, perro, perros, gato, gatos, silla de ruedas, sillas de ruedas para mascotas, protesis mascotas, protesis perro, protesis gato, pet shop">
     <meta name="og:image" content="https://ezedjm.github.io/JuanitoCoder/Images/juanifavicon1bis.png">
     <meta name="twitter:image" content="https://ezedjm.github.io/JuanitoCoder/Images/juanifavicon1bis.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -54,62 +56,52 @@
             </div>
         </section>
 
+        <!DOCTYPE html>
+        <html>
+
+        <div id="popup" class="popup-container">
+            <div class="popup-content">
+                <section>
+                    <h2 class="popup">Formulario</h2>
+                    <h2 class="popup">de Registro</h2>
+                    <hr>
+                    <input type="text" id="signUsuario" required placeholder=" Ingresa tu usuario">
+                    <input type="text" id="signContraseña" required placeholder=" Ingresa tu contraseña">
+                    <button id="ingresoUsuario" class="btn btn-secondary btn-lg btn-block">Ingresar</button>
+                    <hr>
+                    <button id="contInvitado" class="btn btn-secondary btn-lg btn-block">Continuar como
+                        invitado</button>
+                </section>
+
+                <form id="registroForm">
+                    <input type="text" id="nombre" required placeholder=" Ingresa tu nombre">
+                    <input type="text" id="apellido" required placeholder=" Ingresa tu apellido">
+                    <input type="dni" id="dni" required placeholder=" Ingresa tu DNI sin puntos ni comas">
+                    <input type="email" id="email" required placeholder=" Ingresa tu email">
+                    <input type="date" id="fechaNacimiento" required placeholder=" Ingresa tu fecha de Nacimiento">
+                    <input type="text" id="pais" required placeholder=" Ingresa tu pais">
+                    <input type="text" id="contraseña" required placeholder=" Ingresa una contraseña para tu usuario">
+                    <button id="registrarUsuarioBasico" type="submit"
+                        class="w-100 btn btn-danger btn-lg">Registrar</button>
+
+                </form>
+
+            </div>
+        </div>
+
         <section class="SeccionSup">
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
-            <div id="Producto">
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-
-                <a href="">Sumar en carrito</a>
-            </div>
-
+            <form action="" id="FormCompra">
+                <p>
+                <div id="ProductosPagina"></div>
+                </p>
+                <p>
+                    <button id="botonCompra" class="w-100 btn btn-danger btn-lg" type="submit" value="Comprar">FINALIZAR
+                        COMPRA</button>
+                </p>
+            </form>
         </section>
 
-        <button id="BtnCompras" class="w-100 btn btn-danger btn-lg" type="submit"><a
-                href="../Pages/FormCompra.html">FINALIZAR COMPRA</a></button>
-
         <section class="SeccionInf">
-
             <div class="LinksMobile">
                 <h2>PROXIMAMENTE</h2>
                 <div>
@@ -151,7 +143,9 @@
         </nav>
 
     </footer>
-
+    <script src="../tienda.js"></script>
 </body>
 
 </html>
+
+

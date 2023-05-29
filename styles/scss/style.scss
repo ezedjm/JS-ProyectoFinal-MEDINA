@@ -130,6 +130,66 @@ nav {
     border-radius: 20px;
 }
 
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: cornflowerblue;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    width: 90%; /* Ancho del popup: 90% del ancho de pantalla */
+    max-width: 900px; /* Límite máximo del ancho del popup */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    grid-template-columns: 1fr; /* Dividir en dos columnas */
+    grid-gap: 20px; /* Espacio entre columnas */
+    margin: 0 auto; /* Centra horizontalmente el popup */
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.popup-content label,
+.popup-content input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.popup-content label {
+    text-align: left;
+}
+
+.popup-content button {
+    margin-top: 10px;
+}
+
+#botonCompra {
+    margin-top: 20px;
+}
+
+.popup {
+    font-family: "Ultra", serif;
+    font-size: 40px;
+    color: whitesmoke;
+    font-weight: lighter;
+  }
+
+
 /* HEADERS */
 
 @import "./componentes/headers";

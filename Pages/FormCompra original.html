@@ -22,7 +22,7 @@
 </head>
 
 <body>
-
+    <script src="../facturacion.js"></script>
     <header class="Header">
         <div id="Marca">
             <h1 id="NombreSitio"><a href="../index.html">Juanit</a></h1>
@@ -48,7 +48,6 @@
     </section>
 
     <main id="MainFormCompra">
-
         <section class="DatosUsuarioC">
             <div>
                 <h4 class="mb-3">Domicilio de facturacion</h4>
@@ -70,14 +69,6 @@
                             </div>
                         </div>
 
-                        <div class="w-100">
-                            <label for="lastName" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="fechaNac" required placeholder=" Ingresa tu fecha de Nacimiento" value="" required>
-                            <div class="invalid-feedback">
-                                Se requiere ingresar una fecha valida.
-                            </div>
-                        </div>
-                        
 
                         <div>
                             <label for="email" class="form-label">Email <span
@@ -153,27 +144,47 @@
                 <div>
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-primary">Tu carrito</span>
-                        <span id="cantidadProductos" class="badge bg-primary rounded-pill"></span>
+                        
+                        <form action="" id="FormCompra2">
+                            <div id="cantidadProductos"></div>
+                            <button id="botonCompra2" class="w-100 btn btn-danger btn-lg" type="submit"
+                                value="Comprar">VER CANTIDAD</button>
+                        </form>
                     </h4>
-                    
                     <ul class="list-group mb-3">
-                        <section id="datosProducto">
-                        </section>
+                        <li class="d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Producto 1</h6>
+                                <small class="text-muted">Descripcion</small>
+                            </div>
+                            <span class="text-muted">Valor</span>
+                        </li>
+                        <li class="d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Producto 2</h6>
+                                <small class="text-muted">Descripcion</small>
+                            </div>
+                            <span class="text-muted">Valor</span>
+                        </li>
+                        <li class="d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0">Producto 3</h6>
+                                <small class="text-muted">Descripcion</small>
+                            </div>
+                            <span class="text-muted">Valor</span>
+                        </li>
                         <hr>
-                        <section>
-                            <li class="d-flex justify-content-between bg-light form-control">
-                                <div class="text-success">
-                                    <h6 class="my-0">Promo code</h6>
-                                    <small>CODIGO DE DESCUENTO</small>
-                                </div>
-                                <span class="text-success">Valor</span>
-                            </li>
-
-                            <li class="d-flex justify-content-between">
-                                <span>Total (Ars)</span>
-                                <strong id="valorTotalFinal"></strong>
-                            </li>
-                        </section>
+                        <li class="d-flex justify-content-between bg-light form-control">
+                            <div class="text-success">
+                                <h6 class="my-0">Promo code</h6>
+                                <small>CODIGO DE DESCUENTO</small>
+                            </div>
+                            <span class="text-success">Valor</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Total (Ars)</span>
+                            <strong>Valor Total</strong>
+                        </li>
                         <hr>
                     </ul>
 
@@ -290,10 +301,7 @@
         </nav>
 
     </footer>
-    <script src="../facturacion.js"></script>
+
 </body>
 
 </html>
-
-
-

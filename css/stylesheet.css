@@ -107,6 +107,66 @@ nav ul li a:hover {
   border-radius: 20px;
 }
 
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: cornflowerblue;
+  padding: 20px;
+  text-align: center;
+  width: 90%; /* Ancho del popup: 90% del ancho de pantalla */
+  max-width: 900px; /* Límite máximo del ancho del popup */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  grid-template-columns: 1fr; /* Dividir en dos columnas */
+  grid-gap: 20px; /* Espacio entre columnas */
+  margin: 0 auto; /* Centra horizontalmente el popup */
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.popup-content label,
+.popup-content input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.popup-content label {
+  text-align: left;
+}
+
+.popup-content button {
+  margin-top: 10px;
+}
+
+#botonCompra {
+  margin-top: 20px;
+}
+
+.popup {
+  font-family: "Ultra", serif;
+  font-size: 40px;
+  color: whitesmoke;
+  font-weight: lighter;
+}
+
+
 /* HEADERS */
 .Header {
   z-index: 1;
@@ -576,15 +636,23 @@ nav ul li a:hover {
 
 #Producto {
   display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: rgb(161, 205, 255);
   text-align: center;
   width: 399px;
-  height: 300px;
+  height: 399px;
   margin: 25px;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 20px;
+}
+
+#ProductosPagina {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-around;
 }
 
 #NuestrasRedes {
