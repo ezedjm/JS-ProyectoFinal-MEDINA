@@ -1,93 +1,37 @@
-/*
-ingresar un valor que a futuro vendra de un boton de compra de una tienda virtual
-es cliente ?
-si es cliente que ingrese nombre y clave
-si no dar opcion de continuar como invitado o salir
-si es invitado ingresar nombre 
-mostrar total 
-dar opciones de pago hasta 3 cuotas sin interes
-si elige cuotas mostrar montos mensuales
-()
-*/
+let montoTotal = 0;
+let arrayComprados = [];
 
 function crearPedido() {
-    localStorage.clear;
-    //sumo montos de articulos elegidos
-    for (let i = 0; i < arrayProductos.length; i++) {
-        if (FormCompra.elements[i].checked) {
-            montoTotal = montoTotal + arrayProductos[i].precio;
-            //localStorage.setItem(arrayProductos[i].id, arrayProductos[i].precio);
-
-            //cargo los id de los productos comprados al storage para leerlos en la pagina de facturacion
-            arrayComprados.push(arrayProductos[i].id);
-            //console.log(localStorage.getItem(arrayProductos[i].id));
-        };
-    };
-    //subo todo al storage 
     localStorage.setItem("montoTotal", montoTotal);
     localStorage.setItem("arrayComprados", JSON.stringify(arrayComprados));
 };
 
-//para cargar persona cuando valide el usuario mas adelante
-/*let infoPersona = {
-    dni: 123123123,
-    contraseña: "123asd*",
-    nombre: "Coder",
-    apellido: "House",
-    edad: 1,
-    fechaNac: 01 / 01 / 01,
-    domicilioE: "CasaE",
-    domicilioF: "CasaF",
-    pais: "Argentina",
-    codPostal: 1211,
-    email: "email@coder.com.ar",
-    frecuente: true,
-};*/
+const carritoStorage = localStorage.getItem("arrayComprados");
+if (carritoStorage) {
+    // Si hay un carrito almacenado, asignar los datos a las variables correspondientes
+    arrayComprados = JSON.parse(carritoStorage);
+    montoTotal = localStorage.getItem("montoTotal");
+}
 
+function mostrarProductos() {
+    let ProductosVisu = document.getElementById("ProductosPagina");
 
-/*
-function crearOValidarCliente() {
-
-    // Obtener los valores de los campos del formulario
-    let nombreBas = document.getElementById("nombre").value;
-    let apellidoBas = document.getElementById("apellido").value;
-    let dniBas = document.getElementById("dni").value;
-    let emailBas = document.getElementById("email").value;
-    let fechaNacimientoBas = document.getElementById("fechaNacimiento").value;
-    let paisBas = document.getElementById("pais").value;
-    let contraseñaBas = document.getElementById("contraseña").value;
-
-    //validar dni a ver si ya es cliente o no
-    //si no es cliente
-    let variableNombre = "Cliente_" + dniBas;
-    window[variableNombre] {
-        dniBas,
-        nombreBas,
-        apellidoBas,    
-        emailBas,
-        fechaNacimientoBas,
-        paisBas,
-        contraseñaBas                
-    };
-
-    class PersonaBasicaBuilder {
-        constructor(window[variableNombre]) {
-            this.dni = window[variableNombre].dniBas;
-            this.nombre = window[variableNombre].nombreBas;
-            this.apellido = window[variableNombre].apellidoBas;
-            this.email = window[variableNombre].emailBas;
-            this.fechaNac = window[variableNombre].fechaNacimientoBas;
-            this.pais = window[variableNombre].paisBas;
-            this.contraseña = window[variableNombre].contraseñaBas;
-        }
-    };
-
-    //si ya es cliente dar aviso que ya hay un usuario creado con ese dni y enviar a ingresar y dar 
-    //chance de obtener nueva contrasenia 
-
-    ;
-};*/
-
+    arrayProductos.forEach((item) => {
+        let div = document.createElement("div");
+        let fotoProducto = "../Images/fotoProducto" + item.id + ".png";
+        div.innerHTML = `
+    <div id="Producto">
+    <h2>${item.nombre}</h2>
+    <img class="FotoProducto" src="${fotoProducto}" alt="Imagen de Producto">
+    <p>${item.detalle}</p>
+    <b>${item.moneda} ${item.precio}</b>
+    <label class="agregaCarrito" id="${item.id}">Sumar en carrito<input type="checkbox" id="" visibility: hidden></label>
+    <hr></hr>
+    </div>
+    `;
+        ProductosVisu.append(div);
+    });
+};
 
 function crearOValidarCliente() {
     let nombreBas = document.getElementById("nombre").value;
@@ -112,128 +56,371 @@ function crearOValidarCliente() {
 };
 
 
-function banderaUserReg (bandera) {
-regCliente = bandera;
-return regCliente;
-};
+fetch('../productosDB.json')
+    .then(response => response.json())
+    .then(data => {
+        // Aquí tienes acceso a los datos del archivo JSON
+        const arrayProductos = data;
 
+        // Puedes realizar operaciones con el arrayProductos
+        console.log('arrayProductos ', arrayProductos);
+        console.log('Producto 3 id', typeof arrayProductos[2].id);
 
-class PersonaBuilder {
-    constructor(infoPersona) {
-        this.dni = infoPersona.dni;
-        this.contraseña = infoPersona.contraseña;
-        this.nombre = infoPersona.nombre;
-        this.apellido = infoPersona.apellido;
-        this.edad = infoPersona.edad;
-        this.fechaNac = infoPersona.fechaNac;
-        this.domicilioE = infoPersona.domicilioE;
-        this.domicilioF = infoPersona.domicilioF;
-        this.pais = infoPersona.pais;
-        this.codPostal = infoPersona.codPostal;
-        this.email = infoPersona.email;
-        this.frecuente = infoPersona.frecuente;
-    }
-};
+        mostrarProductos();
+        localStorage.setItem("arrayProductos", JSON.stringify(arrayProductos));
+    })
+    .catch(error => {
+        // Manejo de errores en caso de que la solicitud falle
+        console.error('Error al cargar el archivo JSON:', error);
+    });
 
-/*
-const Persona1 = new PersonaBuilder(infoPersona);
-const Persona2 = new PersonaBuilder(infoPersona);
-const Persona3 = new PersonaBuilder(infoPersona);
-*/
-
-//generador de Productos
-function Producto(idProducto, nombreProducto, monedaProducto, precioProducto, detalleProducto, stockProducto) {
-    this.id = idProducto;
-    this.nombre = nombreProducto;
-    this.moneda = monedaProducto;
-    this.precio = precioProducto;
-    this.detalle = detalleProducto;
-    this.stock = stockProducto;
-};
-
-//creo utilizando funcion
-const Producto1 = new Producto(1, "Producto 1", "ARG $", 1100, "Descripcion basica del producto 1", true);
-const Producto2 = new Producto(2, "Producto 2", "ARG $", 2200, "Descripcion basica del producto 2", true);
-
-//creo a mano solo para ejemplo
-const Producto3 = {
-    id: 3,
-    nombre: "Producto 3",
-    moneda: "ARG $",
-    precio: 3300,
-    detalle: "Descripcion basica del producto 3",
-    stock: true,
-};
-
-const Producto4 = new Producto(4, "Producto 4", "ARG $", 4400, "Descripcion basica del producto 4", true);
-const Producto5 = new Producto(5, "Producto 5", "ARG $", 5500, "Descripcion basica del producto 5", true);
-const Producto6 = new Producto(6, "Producto 6", "ARG $", 6600, "Descripcion basica del producto 6", true);
-const Producto7 = new Producto(7, "Producto 7", "ARG $", 7700, "Descripcion basica del producto 7", true);
-const Producto8 = new Producto(8, "Producto 8", "ARG $", 8800, "Descripcion basica del producto 8", true);
-const Producto9 = new Producto(9, "Producto 9", "ARG $", 9900, "Descripcion basica del producto 9", true);
-
-
-//carga del arrayProductos - hacer automatica la carga mas adelante 
-const arrayProductos = [];
-arrayProductos.push(Producto1);
-arrayProductos.push(Producto2);
-arrayProductos.push(Producto3);
-arrayProductos.push(Producto4);
-arrayProductos.push(Producto5);
-arrayProductos.push(Producto6);
-arrayProductos.push(Producto7);
-arrayProductos.push(Producto8);
-arrayProductos.push(Producto9);
-
+// bajo el arrayProductos del localStorage para trabajarlo en esta pagina
+const arrayProductosStorage = localStorage.getItem("arrayProductos");
+const arrayProductos = JSON.parse(arrayProductosStorage);
 //creo array de productos comprados
-const arrayComprados = [];
-arrayComprados.clear;
-
+//const arrayComprados = [];
 //cargo arrayProductos al localStorage para compulsar en pagina de facturacion
 localStorage.setItem("arrayProductos", JSON.stringify(arrayProductos));
 
-//cargo arrayProductos al html como si estuviera trayendo de una BD
-let ProductosVisu = document.getElementById("ProductosPagina");
+mostrarProductos();
 
-arrayProductos.forEach((item) => {
-    let div = document.createElement("div");
-    div.innerHTML = `
-    <div id="Producto">
-    <h2>${item.nombre}</h2>
-    <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-    <p>${item.detalle}</p>
-    <b>${item.moneda} ${item.precio}</b>
-    <label>Sumar en carrito <input type="checkbox" id="${item.id}"></label>
-    <hr></hr>
-    </div>
-    `;
-    ProductosVisu.append(div);
-});
-
-document.getElementById("botonCompra").addEventListener("click", function () {
-    document.getElementById("popup").style.display = "block";
-});
-
+//click entrar como invitado
 document.getElementById("contInvitado").addEventListener("click", function () {
-    document.getElementById("popup").style.display = "none";
+    //document.getElementById("popup").style.display = "none";
+    popup.style.animation = "fadeOut 0.5s ease-in-out";
+    setTimeout(function () {
+        popup.style.display = "none";
+        popup.style.animation = "";
+    }, 500);
     location.href = "../Pages/FormCompra.html";
-    localStorage.setItem("banderaUsuarioRegistrado", JSON.stringify(banderaUserReg (true)));
+    localStorage.setItem("banderaUsuarioRegistrado", 1);
 });
 
-document.getElementById("registroForm").addEventListener("submit", function (event) {
+//Click en registrar usuario 
+document.getElementById("registrarUsuarioBasico").addEventListener("click", function (event) {
     event.preventDefault();
-    location.href = "../Pages/FormCompra.html";
     crearOValidarCliente();
-    localStorage.setItem("banderaUsuarioRegistrado", JSON.stringify(banderaUserReg (false)));
+    localStorage.setItem("banderaUsuarioRegistrado", 2);
+    popup.style.animation = "fadeOut 0.5s ease-in-out";
+    setTimeout(function () {
+        popup.style.display = "none";
+        popup.style.animation = "";
+        location.href = "../Pages/FormCompra.html";
+    }, 500);
+});
+
+//click en X de form de ingreso 
+document.getElementById("btnCerrar").addEventListener("click", function () {
+    /*document.getElementById("popup").style.display = "none";*/
+    //arrayComprados.splice(0, arrayComprados.length);
+    localStorage.setItem("arrayComprados", JSON.stringify(arrayComprados));
+    popup.style.animation = "fadeOut 0.5s ease-in-out";
+    setTimeout(function () {
+        popup.style.display = "none";
+        popup.style.animation = "";
+    }, 500);
+});
+
+function cargaInfoProducto(idProducto, cantProducto) {
+    return {
+        id: idProducto,
+        cantidad: cantProducto
+    };
+};
+
+
+function buscarProductoEnArrayComprados(idProducto) {
+    var productoEncontrado = arrayComprados.find(item => item.id === idProducto);
+    if (productoEncontrado) {
+        return true; // Producto repetido
+    } else {
+        return false; // Producto nuevo
+    }
+}
+
+function eliminarProductoDelCarrito(posicion) {
+    arrayComprados.splice(posicion, 1);
+    crearPedido();
+};
+
+function buscarPosicionEnArrayComprados(idProducto) {
+    return arrayComprados.findIndex(item => item.id === idProducto);
+};
+
+//---------------------------------------------------------------------------------------------------------
+
+function actualizarCarrito() {
+
+    //escribe en arrayComprados y muestra en Carrito
+    let contenidoCarrito = document.getElementById("contenidoCarrito");
+    contenidoCarrito.innerHTML = "";
+
+    arrayComprados.forEach(item => {
+
+        let productoCarrito = document.createElement("div");
+        let cantSeleccionada = item.cantidad;
+        let valorVisu = cantSeleccionada * arrayProductos[item.id - 1].precio;
+        productoCarrito.innerHTML = `
+                    <div id="prodCarrito">
+                    <p>${arrayProductos[item.id - 1].nombre} x <button class="btnMenos" id="btnMenos${item.id}" type="submit" value=" - "> - </button> ${cantSeleccionada} <button class="btnMas" id="btnMas${item.id}" type="submit" value="+"> + </button> - ${arrayProductos[item.id - 1].moneda} ${valorVisu}</p>
+                    </div>
+                    `;
+
+        contenidoCarrito.append(productoCarrito);
+    });
+
+    //botones - del carrito 
+    let btnMenosLista = document.querySelectorAll('.btnMenos');
+    btnMenosLista.forEach((btnMenos) => {
+        btnMenos.addEventListener('click', (event) => {
+            event.preventDefault();
+            let itemIdMenos = event.target.id.slice(8);
+            let qth2 = buscarPosicionEnArrayComprados(itemIdMenos);
+
+            if (arrayComprados[qth2].cantidad === 1) {
+                eliminarProductoDelCarrito(buscarPosicionEnArrayComprados(itemIdMenos));
+
+                if (arrayComprados.length === 0) {
+                    desactivarBotonFinalizarCompra();
+                }
+            } else {
+                arrayComprados[qth2].cantidad -= 1;
+                crearPedido();
+
+            };
+            //genero listado nuevamente
+            actualizarCarrito();
+        });
+    });//cierre botones -
+
+    //botones + del carrito
+    let btnMasLista = document.querySelectorAll('.btnMas');
+    btnMasLista.forEach((btnMas) => {
+        btnMas.addEventListener('click', (event) => {
+
+            event.preventDefault();
+            let itemIdMas = event.target.id.slice(6);
+            arrayComprados[buscarPosicionEnArrayComprados(itemIdMas)].cantidad += 1;
+            //genero listado nuevamente
+            actualizarCarrito();
+            crearPedido();
+        });
+    });//cierre botones +
+
+
+    crearPedido();
+}; //cierre function actualizarCarrito()
+
+actualizarCarrito();
+
+//--------------------------------------------------------------------------------------------------------
+
+// Escuchar eventos para agregar al carrito desde labelsAgregaCarrito
+const labelsAgregaCarrito = document.querySelectorAll('label.agregaCarrito');
+labelsAgregaCarrito.forEach((label) => {
+    label.addEventListener('click', (event) => {
+        event.preventDefault();
+        //find label.id en arrayComprados, si esta que modifique cantidad, sino que agregue al carrito 
+        const productoRepetido = buscarProductoEnArrayComprados(label.id);
+        let hg = buscarPosicionEnArrayComprados(label.id);
+
+        if (productoRepetido) {   //actualiza
+            arrayComprados[hg].cantidad += 1;
+            crearPedido();
+
+        } else { // agrega normal
+            let infoComprados = new cargaInfoProducto(label.id, 1);
+            arrayComprados.push(infoComprados);
+            botonCompra.disabled = false;
+            botonCompra.style.backgroundColor = 'red';
+            document.getElementById("carritoPopup").style.display = "block";
+            Swal.fire({
+                position: 'top-end',
+                title: 'Producto agregado al Carrito',
+                showConfirmButton: false,
+                timer: 700
+            })
+            crearPedido();
+        } //cierre else
+        actualizarCarrito();
+    });//cierre label.addEventListener
+});//cierre labelsAgregaCarrito
+
+
+let carritoPopup = document.getElementById('carritoPopup');
+let btnMinimizarCarrito = document.getElementById('btnMinimizarCarrito');
+let contenidoCarrito = document.getElementById('contenidoCarrito');
+
+function limpiarCarrito() {
+    botonCompra.disabled = true;
+    botonCompra.style.backgroundColor = 'gray';
+    arrayComprados.splice(0, arrayComprados.length);
+    localStorage.setItem("arrayComprados", JSON.stringify(arrayComprados));
+    let contenidoCarrito = document.getElementById("contenidoCarrito");
+    contenidoCarrito.innerHTML = "";
+    carritoPopup.style.animation = "fadeOut 1s ease-in-out";
+};
+
+//click X carrito
+let btnCerrarCarrito = document.getElementById('btnCerrarCarrito');
+btnCerrarCarrito.addEventListener('click', () => {
+    limpiarCarrito();
+    setTimeout(function () {
+        carritoPopup.style.display = "none";
+    }, 1000);
 });
 
 
-//traigo el form del html y lo escucho
-const FormCompra = document.getElementById('FormCompra');
 
-FormCompra.addEventListener('submit', (event) => {
+btnMinimizarCarrito.addEventListener('click', () => {
+    contenidoCarrito.style.display = contenidoCarrito.style.display === 'none' ? 'block' : 'none';
+});
+
+//click botonCompra
+const botonCompra = document.getElementById('botonCompra');
+botonCompra.addEventListener('click', (event) => {
+    document.getElementById("popup").style.display = "block";
     event.preventDefault();
-    montoTotal = 0;
+    arrayComprados.forEach((item) => {
+        let iid = item.id - 1;
+        montoTotal = montoTotal + (arrayProductos[iid].precio * item.cantidad);
+    });
     crearPedido();
 });
+
+//click boton ingresar con usuario -signUsuario- y contraseña -signContraseña-
+//funcion busqueda
+function buscarUsuarioPorDNI(array, dni) {
+    const objetoEncontrado = array.find(objeto => objeto.dni === dni);
+    if (objetoEncontrado) {
+        return array.indexOf(objetoEncontrado); // Devuelve la posición index si se encuentra una coincidencia
+    } else {
+        return -1; // Devuelve -1 si no se encuentra ninguna coincidencia
+    }
+};
+
+//click
+const botonIngresarCC = document.getElementById('ingresoUsuario');
+botonIngresarCC.addEventListener('click', (event) => {
+    event.preventDefault();
+    //valido credenciales en usuariosDB.json
+    fetch('../usuariosDB.json')
+        .then(response => response.json())
+        .then(data => {
+            const arrayUsuarios = data;
+            let usuarioDNI = document.getElementById('signUsuario').value;
+            let usuarioContrasenia = document.getElementById('signContraseña').value;
+            let objetivo = buscarUsuarioPorDNI(arrayUsuarios, JSON.parse(usuarioDNI));
+            console.log("objetivo index", typeof usuarioDNI);
+            if (objetivo != -1) { //usuario hallado
+                if (arrayUsuarios[objetivo].contraseña == usuarioContrasenia) { //que avance a facturar
+                    localStorage.setItem('usuarioIngresado', JSON.stringify(objetivo));
+                    localStorage.setItem("banderaUsuarioRegistrado", 3);
+                    popup.style.animation = "fadeOut 0.5s ease-in-out";
+                    setTimeout(function () {
+                        popup.style.display = "none";
+                        popup.style.animation = "";
+                        location.href = "../Pages/FormCompra.html";
+                    }, 500);
+                } else { //contras incorrecta
+                    Swal.fire({
+                        position: 'center',
+                        title: 'Usuario y/o Contraseña inexistentes',
+                        showConfirmButton: false,
+                        timer: 900
+                    })
+                }
+            } else { //usuario no encontrado
+                Swal.fire({
+                    position: 'center',
+                    title: 'Usuario y/o Contraseña inexistentes',
+                    showConfirmButton: false,
+                    timer: 900
+                })
+            };
+
+            console.log(arrayUsuarios);
+        })
+        .catch(error => {
+            console.error('Error al cargar el archivo JSON de Usuarios:', error);
+        });
+});
+
+//que evalue el carrito al iniciar 
+function desactivarBotonFinalizarCompra() {
+    botonCompra.disabled = true;
+    botonCompra.style.backgroundColor = 'gray';
+};
+
+//desactivar Finalizar Compra al iniciar si no hay nada en el carrito
+window.addEventListener('DOMContentLoaded', function () {
+    if (arrayComprados.length === 0) {
+        desactivarBotonFinalizarCompra();
+    }
+});
+
+// LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA 
+// LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA
+// LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA 
+// LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA LIBRERIA 
+//uso libreria anime
+const FotoProductoAnimada = document.querySelectorAll("img.FotoProducto");
+FotoProductoAnimada.forEach((img) => {
+
+    let FotoProductoGrande = false;
+
+    const mouseOverImagen = () => {
+        anime({
+            targets: img,
+            scale: {
+                delay: 100,
+                value: 1.05,
+            },
+            duration: 1800
+        });
+    };
+
+    const clickEnImagen = () => {
+        if (FotoProductoGrande === false) {
+            anime({
+                targets: img,
+                scale: {
+                    delay: 100,
+                    value: 2,
+                },
+                duration: 1800
+            });
+            FotoProductoGrande = true;
+        } else {
+            anime({
+                targets: img,
+                scale: {
+                    delay: 100,
+                    value: 1,
+                },
+                duration: 1800
+            });
+            FotoProductoGrande = false;
+        }
+    };
+
+    img.addEventListener('mouseover', mouseOverImagen);
+    img.addEventListener('click', clickEnImagen);
+
+    const mouseOutImagen = () => {
+        anime({
+            targets: img,
+            scale: {
+                delay: 100,
+                value: 1,
+            },
+            duration: 1800
+        });
+        FotoProductoGrande = false
+    };
+
+    img.addEventListener('mouseout', mouseOutImagen);
+});
+
+
 

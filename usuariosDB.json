@@ -1,0 +1,32 @@
+[
+    {
+        "dni": 123,
+        "contraseña": 123,
+        "nombre": "Coder",
+        "apellido": "House",
+        "edad": 99,
+        "fechaNac": "2000-05-02",
+        "domicilioE": "calle 13",
+        "domicilioF": "calle 12",
+        "pais": "Argentina",
+        "codPostal": 1212,
+        "localidad": "CABA",
+        "email": "email@coderhouse.com.ar",
+        "frecuente": false
+    },
+    {
+        "dni": 789,
+        "contraseña": 789,
+        "nombre": "Juan",
+        "apellido": "Garcia",
+        "edad": 30,
+        "fechaNac": "1982-07-16",
+        "domicilioE": "Avenida 789",
+        "domicilioF": "Avenida 789",
+        "pais": "Argentina",
+        "localidad": "localidad",
+        "codPostal": 1515,
+        "email": "juanG@email.com.ar",
+        "frecuente": true
+    }
+]

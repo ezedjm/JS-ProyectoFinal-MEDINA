@@ -62,10 +62,11 @@
         <div id="popup" class="popup-container">
             <div class="popup-content">
                 <section>
-                    <h2 class="popup">Formulario</h2>
-                    <h2 class="popup">de Registro</h2>
+                    <h2 class="popup">Ingresá</h2>
+                    <h2 class="popup">con tu usuario</h2>
+
                     <hr>
-                    <input type="text" id="signUsuario" required placeholder=" Ingresa tu usuario">
+                    <input type="text" id="signUsuario" required placeholder=" Ingresa tu DNI">
                     <input type="text" id="signContraseña" required placeholder=" Ingresa tu contraseña">
                     <button id="ingresoUsuario" class="btn btn-secondary btn-lg btn-block">Ingresar</button>
                     <hr>
@@ -74,19 +75,32 @@
                 </section>
 
                 <form id="registroForm">
+                    <h2 class="popup">O registrate</h2>
                     <input type="text" id="nombre" required placeholder=" Ingresa tu nombre">
                     <input type="text" id="apellido" required placeholder=" Ingresa tu apellido">
                     <input type="dni" id="dni" required placeholder=" Ingresa tu DNI sin puntos ni comas">
                     <input type="email" id="email" required placeholder=" Ingresa tu email">
                     <input type="date" id="fechaNacimiento" required placeholder=" Ingresa tu fecha de Nacimiento">
                     <input type="text" id="pais" required placeholder=" Ingresa tu pais">
-                    <input type="text" id="contraseña" required placeholder=" Ingresa una contraseña para tu usuario">
+                    <input type="text" id="contraseña" required placeholder=" Ingresa una contraseña">
                     <button id="registrarUsuarioBasico" type="submit"
                         class="w-100 btn btn-danger btn-lg">Registrar</button>
 
                 </form>
-
+                <button id="btnCerrar" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
             </div>
+        </div>
+
+        <div id="carritoPopup" class="popupCarrito">
+            <h5>Carrito de compras     <button id="btnMinimizarCarrito" class="btnMinMax"> <img src="../Images/minimizar.png" width="18px" height="19px"></button>
+            
+            <button id="btnCerrarCarrito" type="button" class="btn-close btn-close-white" aria-label="Close"></button></h5>
+            <div id="contenidoCarrito" class="popup-contentCarrito">
+
+                </div>
+                <button id="botonCompra" class="w-100 btn btn-danger btn-lg" type="submit" value="Comprar">FINALIZAR
+                    COMPRA</button>
+                
         </div>
 
         <section class="SeccionSup">
@@ -95,8 +109,7 @@
                 <div id="ProductosPagina"></div>
                 </p>
                 <p>
-                    <button id="botonCompra" class="w-100 btn btn-danger btn-lg" type="submit" value="Comprar">FINALIZAR
-                        COMPRA</button>
+                    
                 </p>
             </form>
         </section>
@@ -143,9 +156,14 @@
         </nav>
 
     </footer>
+    
+    <script src="../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
     <script src="../tienda.js"></script>
+    <script src="../productosDB.json"></script>
+    <script src="../usuariosDB.json"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 </body>
 
 </html>
-
-

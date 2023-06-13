@@ -51,7 +51,7 @@
 
         <section class="DatosUsuarioC">
             <div>
-                <h4 class="mb-3">Domicilio de facturacion</h4>
+                <h4 class="mb-3">Datos de facturacion</h4>
                 <form class="needs-validation" novalidate>
                     <div class="row g-3">
                         <div>
@@ -71,13 +71,14 @@
                         </div>
 
                         <div class="w-100">
-                            <label for="lastName" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="fechaNac" required placeholder=" Ingresa tu fecha de Nacimiento" value="" required>
+                            <label for="fechaNac" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNac" required
+                                placeholder=" Ingresa tu fecha de Nacimiento" value="" required>
                             <div class="invalid-feedback">
                                 Se requiere ingresar una fecha valida.
                             </div>
                         </div>
-                        
+
 
                         <div>
                             <label for="email" class="form-label">Email <span
@@ -120,7 +121,7 @@
                                 <option>Ciudad Autonoma de Buenos Aires</option>
                             </select>
                             <div class="invalid-feedback">
-                                Elija una provincia valido.
+                                Elija una provincia valida.
                             </div>
                         </div>
 
@@ -155,7 +156,7 @@
                         <span class="text-primary">Tu carrito</span>
                         <span id="cantidadProductos" class="badge bg-primary rounded-pill"></span>
                     </h4>
-                    
+
                     <ul class="list-group mb-3">
                         <section id="datosProducto">
                         </section>
@@ -246,22 +247,10 @@
 
             <hr class="my-4">
 
-            <button class="w-100 btn btn-danger btn-lg" type="submit">FINALIZAR COMPRA</button>
+            <button class="w-100 btn btn-danger btn-lg" type="submit" id="FinalizarOperacion">FINALIZAR COMPRA</button>
         </section>
 
-
-        <section class="MuestrasC">
-            <div>
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-            </div>
-
-            <div>
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-            </div>
-
-            <div>
-                <img src="../Images/fotoProducto.png" alt="Imagen de Producto">
-            </div>
+        <section class="MuestrasC" id="muestraComprados">
         </section>
 
     </main>
@@ -290,10 +279,12 @@
         </nav>
 
     </footer>
+    <script src="../node_modules/animejs/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
     <script src="../facturacion.js"></script>
+    <script src="../usuariosDB.json"></script>
+
 </body>
 
 </html>
-
-
-

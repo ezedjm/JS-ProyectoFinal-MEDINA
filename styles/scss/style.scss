@@ -65,6 +65,17 @@ nav {
     }
 }
 
+.btnMinMax {
+    background-image: url("/Images/minimizar.png");
+}
+
+.agregaCarrito {
+    &:hover {
+        color: $color-nav-hover;
+        text-shadow: $sombra-nav-hover;
+    }
+}
+
 #TituloGral {
     text-align: center;
     font-family: 'Ultra', serif;

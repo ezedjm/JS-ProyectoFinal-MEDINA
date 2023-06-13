@@ -1,0 +1,76 @@
+[
+      {
+        "id": 1,
+        "nombre": "Producto 1",
+        "moneda": "ARG $",
+        "precio": 1100,
+        "detalle": "Descripción básica del producto 1",
+        "stock": true
+      },
+      {
+        "id": 2,
+        "nombre": "Producto 2",
+        "moneda": "ARG $",
+        "precio": 2200,
+        "detalle": "Descripción básica del producto 2",
+        "stock": true
+      },
+      {
+        "id": 3,
+        "nombre": "Producto 3",
+        "moneda": "ARG $",
+        "precio": 3300,
+        "detalle": "Descripción básica del producto 3",
+        "stock": true
+      },
+      {
+        "id": 4,
+        "nombre": "Producto 4",
+        "moneda": "ARG $",
+        "precio": 4400,
+        "detalle": "Descripción básica del producto 4",
+        "stock": true
+      },
+      {
+        "id": 5,
+        "nombre": "Producto 5",
+        "moneda": "ARG $",
+        "precio": 5500,
+        "detalle": "Descripción básica del producto 5",
+        "stock": true
+      },
+      {
+        "id": 6,
+        "nombre": "Producto 6",
+        "moneda": "ARG $",
+        "precio": 6600,
+        "detalle": "Descripción básica del producto 6",
+        "stock": true
+      },
+      {
+        "id": 7,
+        "nombre": "Producto 7",
+        "moneda": "ARG $",
+        "precio": 7700,
+        "detalle": "Descripción básica del producto 7",
+        "stock": true
+      },
+      {
+        "id": 8,
+        "nombre": "Producto 8",
+        "moneda": "ARG $",
+        "precio": 8800,
+        "detalle": "Descripción básica del producto 8",
+        "stock": true
+      },
+      {
+        "id": 9,
+        "nombre": "Producto 9",
+        "moneda": "ARG $",
+        "precio": 9900,
+        "detalle": "Descripción básica del producto 9",
+        "stock": true
+      }
+    ]
+  
+  

@@ -4,10 +4,13 @@
   "description": "Mi json de Juanito",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch-scss": "sass --watch styles/scss/style.scss css/stylesheet.css"
-      },
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.2.1"
+  }
 }
